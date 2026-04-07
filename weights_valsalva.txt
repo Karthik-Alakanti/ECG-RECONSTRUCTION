@@ -1,0 +1,41 @@
+# VALSALVA OPTIMIZED WEIGHTS
+# Focus: Maintain excellent performance (current: 0.654 ECG PCC - already good)
+
+# --- LOSS WEIGHTS (VALSALVA OPTIMIZED) ---
+lambda_l1 = 2.5          # Moderate increase from 1.0
+lambda_peak = 4.5         # Moderate increase from 3.0
+lambda_temp_corr = 8.0     # Increase from 2.5 - Maintain temporal quality
+lambda_spec_corr = 5.0     # Increase from 2.0 - Better spectral matching
+lambda_slope = 8.0         # Increase from 5.0 - Better slope matching
+lambda_neg = 2.5          # Increase from 1.0
+
+lambda_bp_l1 = 2.0        # Increase from 1.0
+lambda_bp_corr = 3.5       # Increase from 2.0
+
+lambda_icg_l1 = 2.0       # Increase from 1.0
+lambda_icg_corr = 3.5      # Increase from 2.0
+
+lambda_dicg_corr = 6.0     # Increase from 3.0 - Better flow
+lambda_strain_l1 = 2.0     # Increase from 1.0
+
+lambda_resp_l1 = 3.5       # Increase from 2.0
+lambda_tv = 0.25           # Increase from 0.1
+
+# --- TRAINING PARAMETERS (VALSALVA OPTIMIZED) ---
+batch_size = 22          # Increase from 16
+epochs = 160             # Increase from 100
+lr = 7e-4              # Decrease from 1e-3 for stability
+weight_decay = 4.5e-4    # Decrease from 1e-3
+grad_clip = 0.75         # Decrease from 1.0
+
+# --- MODEL ARCHITECTURE (VALSALVA OPTIMIZED) ---
+base_channels = 44       # Increase from 32
+n_filters = 11           # Increase from 8
+
+# --- VALSALVA SPECIFIC NOTES ---
+# Current performance: Already good (0.654 ECG PCC)
+# Goal: Maintain excellence, push to 0.75+
+# Strategy: Moderate improvements, don't over-optimize
+# Target: 0.75+ ECG PCC
+# Key improvements: Balanced enhancement, maintain stability
+# Expected improvement: +0.096 (+14.7%)

@@ -1,0 +1,38 @@
+# APNEA OPTIMIZED WEIGHTS
+# Focus: Better overall performance (current: 0.583 ECG PCC)
+
+# --- LOSS WEIGHTS (APNEA OPTIMIZED) ---
+lambda_l1 = 2.0          # Increase from 1.0 - Better signal reconstruction
+lambda_peak = 4.0         # Increase from 3.0 - Better peak detection
+lambda_temp_corr = 6.0     # Increase from 2.5 - Better temporal alignment
+lambda_spec_corr = 4.0     # Increase from 2.0 - Better spectral matching
+lambda_slope = 7.0         # Increase from 5.0 - Better slope matching
+lambda_neg = 2.0          # Increase from 1.0 - Better negative handling
+
+lambda_bp_l1 = 2.0        # Increase from 1.0
+lambda_bp_corr = 3.0       # Increase from 2.0
+
+lambda_icg_l1 = 2.0       # Increase from 1.0
+lambda_icg_corr = 3.0      # Increase from 2.0
+
+lambda_dicg_corr = 5.0     # Increase from 3.0 - Better flow
+lambda_strain_l1 = 2.0     # Increase from 1.0
+
+lambda_resp_l1 = 3.0       # Increase from 2.0
+lambda_tv = 0.2            # Increase from 0.1
+
+# --- TRAINING PARAMETERS (APNEA OPTIMIZED) ---
+batch_size = 24          # Increase from 16
+epochs = 150             # Increase from 100
+lr = 8e-4              # Decrease from 1e-3 for stability
+weight_decay = 5e-4      # Decrease from 1e-3
+grad_clip = 0.8          # Decrease from 1.0
+
+# --- MODEL ARCHITECTURE (APNEA OPTIMIZED) ---
+base_channels = 48       # Increase from 32
+n_filters = 12           # Increase from 8
+
+# --- APNEA SPECIFIC NOTES ---
+# Focus: Better overall signal quality
+# Target: 0.65+ ECG PCC
+# Key improvements: Higher loss weights, more epochs, better learning rate

@@ -1,0 +1,40 @@
+# RESTING OPTIMIZED WEIGHTS
+# Focus: TEMPORAL ALIGNMENT (current: 0.624 ECG PCC, issue: temporal alignment)
+
+# --- LOSS WEIGHTS (RESTING OPTIMIZED - TEMPORAL FOCUS) ---
+lambda_l1 = 3.0          # Increase from 1.0 - Better signal reconstruction
+lambda_peak = 5.0         # Increase from 3.0 - Better peak detection
+lambda_temp_corr = 12.0    # MAJOR INCREASE from 2.5 - KEY FOR TEMPORAL ALIGNMENT
+lambda_spec_corr = 8.0     # Increase from 2.0 - Better spectral matching
+lambda_slope = 10.0        # Increase from 5.0 - Better slope matching
+lambda_neg = 3.0          # Increase from 1.0 - Better negative handling
+
+lambda_bp_l1 = 2.5        # Increase from 1.0
+lambda_bp_corr = 4.0       # Increase from 2.0
+
+lambda_icg_l1 = 2.5       # Increase from 1.0
+lambda_icg_corr = 4.0      # Increase from 2.0
+
+lambda_dicg_corr = 6.0     # Increase from 3.0 - Better flow
+lambda_strain_l1 = 2.5     # Increase from 1.0
+
+lambda_resp_l1 = 4.0       # Increase from 2.0
+lambda_tv = 0.3            # Increase from 0.1
+
+# --- TRAINING PARAMETERS (RESTING OPTIMIZED) ---
+batch_size = 20          # Increase from 16
+epochs = 180             # Increase from 100
+lr = 6e-4              # Decrease from 1e-3 for stability
+weight_decay = 4e-4      # Decrease from 1e-3
+grad_clip = 0.7          # Decrease from 1.0
+
+# --- MODEL ARCHITECTURE (RESTING OPTIMIZED) ---
+base_channels = 40       # Increase from 32
+n_filters = 10           # Increase from 8
+
+# --- RESTING SPECIFIC NOTES ---
+# MAJOR ISSUE: TEMPORAL ALIGNMENT
+# SOLUTION: 5x increase in temporal correlation weight (2.5 → 12.0)
+# Target: 0.75+ ECG PCC
+# Key improvements: MASSIVE temporal focus, better learning rate, more epochs
+# Expected improvement: +0.126 (+20.2%)
