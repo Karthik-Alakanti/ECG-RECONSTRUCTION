@@ -1,0 +1,25 @@
+Patient: GDN0029
+Sampling rate: 128.0 Hz
+
+Beat Metrics:
+  TP: 564
+  FP: 12
+  FN: 34
+  Precision: 0.9792
+  Recall: 0.9431
+  F1: 0.9608
+
+Window Metrics (±):
+  PCC_windows: 0.8551 ± 0.0618 (low=0.7934, high=0.9169)
+  SpecCorr_windows: 0.9139 ± 0.0459 (low=0.8680, high=0.9597)
+
+Beat Timing Errors:
+  PeakTimingError_ms: 3.5322 ms ± 5.7330 ms (low=-2.2007 ms, high=9.2652 ms)
+  RR_error_ms: 4.0520 ms ± 5.3148 ms (low=-1.2628 ms, high=9.3667 ms)
+
+Full-Signal Metrics:
+  PCC_full: 0.8530
+  SpecCorr_full: 0.9230
+  PCC_worst_non_noisy: 0.7255
+  SpecCorr_worst_non_noisy: 0.7729
+  Noisy Radar %: 2.77%
